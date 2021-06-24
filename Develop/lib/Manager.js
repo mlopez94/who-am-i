@@ -2,7 +2,9 @@
 const Employee = require('./Employee');
 
 class Manager extends Employee {
-    constructor()
+    constructor() {
+
+    };
 };
 
 module.exports = Manager;
