@@ -31,9 +31,72 @@ const profQuestions = () => {
                 }
             }
             
+        },
+        {
+            type: 'input',
+            name: 'idNumber',
+            message: 'Enter the Managers employee ID number',
+            validate: idNumber => {
+                if (idNumber) {
+                    return true;
+                } else {
+                    console.log("Please enter the employee ID number!");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'emailAddr',
+            message: 'Enter your email address',
+            validate: emailAddr => {
+                if (emailAddr) {
+                    return true;
+                } else {
+                    console.log("Please enter your email address!");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'officeNumber',
+            message: 'Enter your office number',
+            validate: officeNumber => {
+                if (officeNumber) {
+                    return true;
+                } else {
+                    console.log("Please enter your office number!");
+                    return false;
+                }
+            }
         }
     ]);
+
+    buildTeamOrNah();
 };
+
+const buildTeamOrNah = () => {
+    inquirer.prompt(
+        {
+            type: 'list',
+            name: 'choice',
+            message: 'Do you want to add team members or not?',
+            choices: ['Engineer', 'Intern', 'Quit']
+
+        }).then(data => {
+            if (data.choice === 'Engineer') {
+                engineerClass();
+            } else if (data.choice === 'Intern') {
+                internClass();
+            } else (data.choice === 'Quit'); {
+                render(arrEmp);    
+            }
+        });
+
+    
+};
+
 
 profQuestions();
 // console.log(nameInput);
