@@ -19,7 +19,7 @@
   ## Installation
   You will have to install node.js -- jest -- and install the inquirer package to run this program
 
-  ## Usage
+  ## Video Link
   For project creation of users
 
   ## Contribution
