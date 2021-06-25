@@ -243,10 +243,12 @@ const buildTeamOrNah = () => {
         engineerClass();
       } else if (data.choice === "Intern") {
         internClass();
-      } else data.choice === "Quit";
-      {
-        render(arrEmp);
+      } else {
+        writeHTML(arrEmp);
       }
+      
+        
+      
     });
 };
 
@@ -256,7 +258,9 @@ const writeHTML = (fileContent) => {
         try {
             fs.writeFileSync(outputPath, render(arrEmp), "utf-8");
             console.log("File was created successfully");
+            resolve();
         } catch(err) {
+            reject(err);
             console.log(err);
         }
     });
@@ -264,5 +268,7 @@ const writeHTML = (fileContent) => {
             
 
 profQuestions();
+
+
 
 
