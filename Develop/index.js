@@ -71,16 +71,33 @@ const profQuestions = () => {
                 }
             }
         }
-    ]);
+    ]).then(answers => {
+        console.log(answers);
+        const manager = new Manager
+        (
+            answers.name,
+            answers.id,
+            answers.email,
+            answers.number
+        );
 
-    // buildTeamOrNah();
+        arrEmp.push(manager);
+
+        buildTeamOrNah();
+
+
+
+
+    });
+
+    // 
 };
 
 const engineerClass = () => {
     inquirer.prompt([
         {
             type: 'input',
-            name: 'engineer',
+            name: 'name',
             message: "Enter the engineer's name:",
             validate: engineInput => {
                 if (engineInput) {
@@ -131,7 +148,21 @@ const engineerClass = () => {
             }
         }
         
-    ]);
+    ]).then(answers => {
+        console.log(answers);
+        const engineer = new Engineer
+        (
+            answers.name,
+            answers.id,
+            answers.email,
+            answers.github,
+        );
+
+        arrEmp.push(engineer);
+
+        buildTeamOrNah();
+
+    });
 };
 
 const internClass = () => {
@@ -189,7 +220,21 @@ const internClass = () => {
             }
         }
     
-    ]);
+    ]).then(answers => {
+        console.log(answers);
+        const intern = new Intern
+        (
+            answers.name,
+            answers.id,
+            answers.email,
+            answers.school,
+        );
+
+        arrEmp.push(intern);
+
+        buildTeamOrNah();
+
+    })
 };
 
 const buildTeamOrNah = () => {
@@ -213,6 +258,17 @@ const buildTeamOrNah = () => {
     
 };
 
+// const writeHTML = (fileContent) => {
+//     return new Promise((resolve, reject) => {
+//         fs.writeFileSync(outputPath, render(arrEmp), "utf-8") => {
+//             if(err) {
+//                 reject(err);
+//             }
+//         }
+//     }
+// }
+
 
 profQuestions();
+
 
