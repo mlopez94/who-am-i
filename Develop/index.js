@@ -6,7 +6,7 @@ const path = require("path");
 const fs = require("fs");
 
 const OUTPUT_DIR = path.resolve(__dirname, "templates");
-const outputPath = path.join(OUTPUT_DIR, "main.html");
+const outputPath = "main.html"
 
 const render = require("./lib/htmlRenderer");
 
@@ -164,7 +164,7 @@ const internClass = () => {
     .prompt([
       {
         type: "input",
-        name: "intern",
+        name: "name",
         message: "Enter the intern's name:",
         validate: (internInput) => {
           if (internInput) {
