@@ -34,7 +34,7 @@ const profQuestions = () => {
         },
         {
             type: 'input',
-            name: 'idNumber',
+            name: 'id',
             message: 'Enter the Managers employee ID number',
             validate: idNumber => {
                 if (idNumber) {
@@ -47,7 +47,7 @@ const profQuestions = () => {
         },
         {
             type: 'input',
-            name: 'emailAddr',
+            name: 'email',
             message: 'Enter your email address',
             validate: emailAddr => {
                 if (emailAddr) {
@@ -60,7 +60,7 @@ const profQuestions = () => {
         },
         {
             type: 'input',
-            name: 'officeNumber',
+            name: 'number',
             message: 'Enter your office number',
             validate: officeNumber => {
                 if (officeNumber) {
@@ -73,7 +73,123 @@ const profQuestions = () => {
         }
     ]);
 
-    buildTeamOrNah();
+    // buildTeamOrNah();
+};
+
+const engineerClass = () => {
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'engineer',
+            message: "Enter the engineer's name:",
+            validate: engineInput => {
+                if (engineInput) {
+                    return true;
+                } else {
+                    console.log("Please enter the engineer's name!");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: "Enter the engineer's ID:",
+            validate: engineID => {
+                if (engineID) {
+                    return true;
+                } else {
+                    console.log("Please enter the engineer's ID!");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: "Enter the engineer's email:",
+            validate: engineEmail => {
+                if (engineEmail) {
+                    return true;
+                } else {
+                    console.log("Please enter the engineer's email!");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: "Enter the engineer's Github username:",
+            validate: github => {
+                if (github) {
+                    return true;
+                } else {
+                    console.log("Please the engineer's Github username!");
+                    return false;
+                }
+            }
+        }
+        
+    ]);
+};
+
+const internClass = () => {
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'intern',
+            message: "Enter the intern's name:",
+            validate: internInput => {
+                if (internInput) {
+                    return true;
+                } else {
+                    console.log("Please enter the intern's name!");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: "Enter the intern's ID:",
+            validate: internId => {
+                if (internId) {
+                    return true;
+                } else {
+                    console.log("Please enter the intern's ID!");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: "Enter the intern's email:",
+            validate: internEmail => {
+                if (internEmail) {
+                    return true;
+                } else {
+                    console.log("Please enter the intern's email!");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: "Where did the intern attend school?",
+            validate: internEmail => {
+                if (internEmail) {
+                    return true;
+                } else {
+                    console.log("Please enter the intern's school!");
+                    return false;
+                }
+            }
+        }
+    
+    ]);
 };
 
 const buildTeamOrNah = () => {
@@ -98,7 +214,8 @@ const buildTeamOrNah = () => {
 };
 
 
-profQuestions();
+internClass();
+
 // console.log(nameInput);
 
 
