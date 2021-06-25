@@ -10,17 +10,16 @@
   
    ## Table of contents
   * [Installation](#installation)
-  * [Usage](#usage)
   * [Contribution](#contribution)
-  * [License](#license)
+  * [Video](#video)
   * [Testing](#testing)
   * [Questions](#questions)
 
   ## Installation
   You will have to install node.js -- jest -- and install the inquirer package to run this program
 
-  ## Video Link
-  For project creation of users
+  ## Video
+  [Team Profile Generator](https://youtu.be/XjSM_1EjsJ0)
 
   ## Contribution
   Starter code was provided by: <br />
